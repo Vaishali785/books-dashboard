@@ -1,9 +1,11 @@
-import Image from "next/image"
-
-function ThemeBgImage({ bgImage }: { bgImage: string }) {
+function ThemeBgImage() {
 	return (
-		<div>
-			<Image src={bgImage} alt="Theme Background" width={1000} height={1000} />
+		<div
+			className="absolute top-0 left-0 w-full h-full z-0  bg-no-repeat bg-center bg-cover
+                        bg-[url('/theme_images/Cherry_Blossom.jpeg')] 
+                        dark:bg-[url('/theme_images/theme-dark.jpeg')] "
+		>
+			{/* <Image src={bgImage} alt="Theme Background" fill /> */}
 		</div>
 	)
 }

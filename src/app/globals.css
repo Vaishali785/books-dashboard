@@ -1,26 +1,42 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #ffffff;
+	--foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {
+	/* Colors to match previous tailwind.config.js tokens */
+	--color-light-bg: rgba(238, 216, 216, 0.44);
+	--color-light-card: #ffffff;
+	--color-light-text: #000000;
+	--color-light-stroke: rgba(255, 252, 252, 0.2);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+	--color-dark-bg: #000000;
+	--color-dark-card: #ffffff;
+	--color-dark-text: #ffffff;
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	--color-light-card-bg-grad-start: rgba(255, 255, 255, 0.4);
+	--color-light-card-bg-grad-via: rgba(255, 255, 255, 0.2);
+	--color-light-card-bg-grad-stop: rgba(255, 200, 150, 0.25);
+
+	/* --color-dark-card-bg-grad-start: rgba(36, 39, 130, 0.25);
+	--color-dark-card-bg-grad-stop: rgba(255, 182, 193, 0.15); */
+
+	--color-dark-card-bg-grad-start-2: rgba(255, 255, 255, 0.15);
+	--color-dark-card-bg-grad-via-2: rgba(255, 255, 255, 0.05);
+	--color-dark-card-bg-grad-stop-2: rgba(36, 39, 130, 0.15);
+	/* rgba(36, 39, 130, 0.15) 100% */
+
+	/* Drop shadows (for drop-shadow-light / drop-shadow-dark) */
+	--shadow-light: 2px 2px 4px 2px rgba(0, 0, 0, 0.25);
+	--shadow-light-2: 0 6px 16px rgba(0, 0, 0, 0.15);
+
+	--shadow-dark: 0 0 10px rgba(255, 255, 255, 0.1);
+	--shadow-dark-2: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+	/* Z-index token so z-100 works */
+	--z-100: 100;
 }

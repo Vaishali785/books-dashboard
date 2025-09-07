@@ -1,5 +1,11 @@
 import type { Metadata } from "next"
+import { Gentium_Book_Plus } from "next/font/google"
 import "./globals.css"
+
+const gentium = Gentium_Book_Plus({
+	subsets: ["latin"],
+	weight: ["400", "700"],
+})
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -12,8 +18,8 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en" className="dark">
-			<body className={`antialiased`}>{children}</body>
+		<html lang="en" className="darks">
+			<body className={`${gentium.className} antialiased`}>{children}</body>
 		</html>
 	)
 }

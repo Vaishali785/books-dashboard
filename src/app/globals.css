@@ -8,31 +8,47 @@
 }
 
 @theme {
+	/* ---------------------- light theme ---------------------- */
 	/* Colors to match previous tailwind.config.js tokens */
-	--color-light-bg: rgba(238, 216, 216, 0.44);
-	--color-light-card: #ffffff;
+	/* --color-light-bg: rgba(238, 216, 216, 0.44); */
+	--color-light-card: #eed8d8;
 	--color-light-text: #000000;
 	--color-light-stroke: rgba(255, 252, 252, 0.2);
+	--color-light-primary: #1d108f;
+	--color-light-secondary: #ffffff;
 
-	--color-dark-bg: #000000;
-	--color-dark-card: #ffffff;
-	--color-dark-text: #ffffff;
+	/* --color-light-card-bg-grad-start-1: rgba(238, 216, 216, 0.4);
+	--color-light-card-bg-grad-stop-1: rgba(255, 255, 255, 0.25); */
 
+	--background-light-bg: linear-gradient(
+			135deg,
+			rgba(238, 216, 216, 0.3),
+			rgba(255, 255, 255, 0.15)
+		),
+		linear-gradient(
+			120deg,
+			rgba(255, 255, 255, 0.5) 0%,
+			rgba(255, 255, 255, 0) 40%
+		);
 	--color-light-card-bg-grad-start: rgba(255, 255, 255, 0.4);
 	--color-light-card-bg-grad-via: rgba(255, 255, 255, 0.2);
 	--color-light-card-bg-grad-stop: rgba(255, 200, 150, 0.25);
 
+	--shadow-light: 2px 2px 4px 2px rgba(0, 0, 0, 0.25);
+	--shadow-light-2: 0 6px 16px rgba(0, 0, 0, 0.15);
 	/* --color-dark-card-bg-grad-start: rgba(36, 39, 130, 0.25);
 	--color-dark-card-bg-grad-stop: rgba(255, 182, 193, 0.15); */
+
+	/* rgba(36, 39, 130, 0.15) 100% */
+
+	/* ----------------- dark theme -------------------- */
+	--color-dark-bg: #000000;
+	--color-dark-card: #ffffff;
+	--color-dark-text: #ffffff;
 
 	--color-dark-card-bg-grad-start-2: rgba(255, 255, 255, 0.15);
 	--color-dark-card-bg-grad-via-2: rgba(255, 255, 255, 0.05);
 	--color-dark-card-bg-grad-stop-2: rgba(36, 39, 130, 0.15);
-	/* rgba(36, 39, 130, 0.15) 100% */
-
-	/* Drop shadows (for drop-shadow-light / drop-shadow-dark) */
-	--shadow-light: 2px 2px 4px 2px rgba(0, 0, 0, 0.25);
-	--shadow-light-2: 0 6px 16px rgba(0, 0, 0, 0.15);
 
 	--shadow-dark: 0 0 10px rgba(255, 255, 255, 0.1);
 	--shadow-dark-2: 0 4px 20px rgba(0, 0, 0, 0.4);

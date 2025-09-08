@@ -1,10 +1,22 @@
 import type { Metadata } from "next"
 import { Gentium_Book_Plus } from "next/font/google"
+import localFont from "next/font/local"
 import "./globals.css"
 
 const gentium = Gentium_Book_Plus({
 	subsets: ["latin"],
 	weight: ["400", "700"],
+})
+
+const briemBold = localFont({
+	src: "../../public/fonts/BriemHand-Bold.ttf",
+	variable: "--briem-bold-font",
+	display: "swap",
+})
+const briemRegular = localFont({
+	src: "../../public/fonts/BriemHand-Regular.ttf",
+	variable: "--briem-regular-font",
+	display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -19,7 +31,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className="darks">
-			<body className={`${gentium.className} antialiased`}>{children}</body>
+			<body
+				className={`${gentium.className} ${briemBold.variable} ${briemRegular.variable} antialiased`}
+			>
+				{children}
+			</body>
 		</html>
 	)
 }

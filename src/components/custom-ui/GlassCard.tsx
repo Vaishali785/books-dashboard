@@ -14,7 +14,7 @@ function GlassCard({
 		<div
 			className={twMerge(
 				clsx(
-					"glass-card z-100 p-4 w-fit relative backdrop-blur-md rounded-2xl text-white ",
+					"glass-card z-30 p-4 w-fit relative backdrop-blur-md rounded-2xl text-white ",
 					"shadow-light",
 					// "bg-transparent bg-gradient-135 from-light-card-bg-grad-start-1  to-light-card-bg-grad-stop-1  ",
 					// "dark:bg-transparent dark:from-dark-card-bg-grad-start-2 dark:from-0% dark:via-dark-card-bg-grad-via-2 ",

@@ -66,3 +66,15 @@ src/
     globals.css
   types/
     index.ts
+
+
+
+
+
+## Libraries & Frameworks
+    1. nextjs
+    2. clsx
+    3. tailwind merge
+    4. shadcn ui
+    5. tailwind  
+    6. nivo charts

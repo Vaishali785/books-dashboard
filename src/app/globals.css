@@ -279,9 +279,11 @@
 
 .briem-bold-font {
 	font-family: var(--briem-bold-font);
+    /* padding-bottom: 5px; */
 	/* font-size: 50px; */
 }
 .briem-regular-font {
-	font-family: var(--briem-regular-font);
+    font-family: var(--briem-regular-font);
+    /* padding-bottom: 2px; */
 	/* font-size: 50px; */
 }

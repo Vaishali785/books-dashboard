@@ -2,12 +2,13 @@ import KPIs from "../features/KPIs"
 import FavQuote from "../features/FavQuote"
 import ThemeBgImage from "@/components/custom-ui/ThemeBgImage"
 import GlassCard from "@/components/custom-ui/GlassCard"
-import DesktopSidebar from "@/components/layout/DesktopSidebar"
 import DesktopHeader from "@/components/layout/DesktopHeader"
 import LineChart from "@/components/custom-ui/charts/LineChart"
 import { barData, genreData, lineData, pagesReadData } from "@/lib/data"
 import BarChart from "@/components/custom-ui/charts/BarChart"
 import PieChart from "@/components/custom-ui/charts/PieChart"
+import Sidebar from "@/components/layout/Sidebar"
+import HorizontalNav from "@/components/layout/HorizontalNav"
 
 export default function Home() {
 	return (
@@ -16,10 +17,14 @@ export default function Home() {
 
 			<div className="flex gap-6 justify-between sm:max-lg:flex-wrap-reverse w-full">
 				<GlassCard classes="lg:w-1/6">
-					<DesktopSidebar />
+					<Sidebar />
 				</GlassCard>
 				<div className="right max-lg:w-full lg:flex-1">
-					<DesktopHeader />
+					<div className="sticky top-0 z-80 backdrop-blur-sm p-4 pb-0 mb-6 -mx-4 flex  flex-col gap-4 bg-light-primary/20">
+						<DesktopHeader />
+						<HorizontalNav />
+					</div>
+
 					<div className="flex gap-6 justify-end sm:max-lg:flex-wrap sm:max-lg:flex-col sm:max-lg:w-full">
 						<KPIs />
 						<FavQuote
@@ -39,7 +44,10 @@ export default function Home() {
 								<h1 className="p-4">Hello World</h1>
 							</GlassCard>
 						</div>
-						<GlassCard classes="max-md:w-full md:w-[48.5%] w-[490px] h-[415px]">
+						<GlassCard
+							classes="max-md:w-full md:w-[48.5%] w-[490px] h-[415px]"
+							cardBg="bg-light-primary/24"
+						>
 							<PieChart data={genreData} />
 						</GlassCard>
 					</div>

@@ -14,16 +14,16 @@ const LineChart = ({ data /* see data tab */ }) => (
 		// 	stacked: true,
 		// 	reverse: false,
 		// }}
-		axisBottom={{ legend: "Transportation", legendOffset: 36 }}
-		axisLeft={{ legend: "Count", legendOffset: -40, tickValues: 5 }}
+		axisBottom={{ legend: "Days", legendOffset: 36 }}
+		axisLeft={{ legend: "Pages Read", legendOffset: -40, tickValues: 5 }}
 		// pointSize={10}
 		// pointColor={{ theme: "background" }}
 		// pointBorderWidth={2}
 		// pointBorderColor={{ from: "seriesColor" }}
 		enableGridX={false} // ❌ Hide vertical grid lines
 		enableGridY={false}
-		// colors="#1d108f"
-		colors={{ scheme: "purple_red" }}
+		colors="#1d108f"
+		// colors={{ scheme: "purple_red" }}
 		theme={{
 			axis: {
 				domain: {

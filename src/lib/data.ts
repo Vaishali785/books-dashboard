@@ -1,3 +1,4 @@
+import * as Icons from "lucide-react"
 export const lineData = [
     {
         "id": "japan",
@@ -164,4 +165,22 @@ export const genreData = [
         "value": 318,
         "color": "hsl(308, 70%, 50%)"
     }
+]
+
+type IconName = keyof typeof Icons
+type MenuOption = { name: string; link: string; icon: IconName; size?: "large" }
+
+export const allUsersMenuOptions: MenuOption[] = [
+    { name: "Home", link: "/", icon: "Home" },
+]
+export const loggedInUserOptions: MenuOption[] = [
+    { name: "Favorites", link: "/favorites", icon: "Heart" },
+    {
+        name: "Recommendations",
+        link: "/recommendations",
+        icon: "Sparkles",
+        size: "large",
+    },
+    { name: "Fav Quotes", link: "/fav-quotes", icon: "Quote" },
+    { name: "Settings", link: "/settings", icon: "Settings" },
 ]

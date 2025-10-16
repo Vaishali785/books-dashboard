@@ -10,6 +10,13 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "@/components/ui/dialog"
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -31,7 +38,7 @@ type Props = {
 function ModelWithButton({ title, icon, size, modelTitle, modelDesc }: Props) {
 	return (
 		<Dialog>
-			<DialogTrigger className="flex gap-2 items-center bg-light-primary text-light-secondary px-4 py-1  rounded-2xl">
+			<DialogTrigger className="flex gap-2 items-center bg-light-primary text-light-secondary px-8 py-2 rounded-md lg:px-4 lg:py-1 lg:rounded-2xl">
 				<span>
 					<DynamicIcon name={icon} size={size} />
 				</span>
@@ -73,12 +80,40 @@ function ModelWithButton({ title, icon, size, modelTitle, modelDesc }: Props) {
 							<Label className="font-bold briem-regular-font" htmlFor="status">
 								Status
 							</Label>
-							<Input
+							<Select>
+								<SelectTrigger className="w-full briem-regular-font [&>svg]:!text-white  data-[placeholder]:!text-white">
+									<SelectValue
+										placeholder="Status"
+										// className="briem-regular-font placeholder:text-white"
+									/>
+								</SelectTrigger>
+								<SelectContent>
+									<SelectItem
+										className="data-[highlighted]:bg-light-primary/25  data-[highlighted]:cursor-pointer " //data-[highlighted]:text-white to change text color when highlighted
+										value="completed"
+									>
+										Completed
+									</SelectItem>
+									<SelectItem
+										className="data-[highlighted]:bg-light-primary/25 data-[highlighted]:cursor-pointer"
+										value="currently-reading"
+									>
+										Currently reading
+									</SelectItem>
+									<SelectItem
+										className="data-[highlighted]:bg-light-primary/25  data-[highlighted]:cursor-pointer "
+										value="tbr"
+									>
+										TBR
+									</SelectItem>
+								</SelectContent>
+							</Select>
+							{/* <Input
 								className="briem-regular-font"
 								id="status"
 								name="status"
 								defaultValue="@peduarte"
-							/>
+							/> */}
 						</div>
 						<div className="grid gap-3">
 							<Label className="font-bold briem-regular-font" htmlFor="genre">

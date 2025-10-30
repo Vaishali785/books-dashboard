@@ -1,21 +1,18 @@
 "use client"
-import { usePathname } from "next/navigation"
-import GlassCard from "../custom-ui/GlassCard"
 import { allUsersMenuOptions, loggedInUserOptions } from "@/lib/data"
-import Link from "next/link"
-import { twMerge } from "tailwind-merge"
 import clsx from "clsx"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { twMerge } from "tailwind-merge"
 import { DynamicIcon } from "../custom-ui/DynamicIcons"
-import ModelWithButton from "../custom-ui/ModelWithButton"
 
 function HorizontalNav() {
 	function getActiveNavItem(link: string) {
 		const path = usePathname()
-		console.log(path, link == path)
 		return link == path
 	}
 	return (
-		<div className="flex justify-between items-center">
+		<div className="flex justify-between items-center lg:hidden">
 			<nav className="tab lg:hidden flex  w-full flex-1">
 				{/* <div className="py-1 bg-accent">Logo</div> */}
 				{allUsersMenuOptions.map((option) => (

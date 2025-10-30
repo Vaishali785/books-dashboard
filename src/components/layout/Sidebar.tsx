@@ -1,17 +1,15 @@
 "use client"
-import * as Icons from "lucide-react"
 
-import Link from "next/link"
-import { DynamicIcon } from "../custom-ui/DynamicIcons"
+import { allUsersMenuOptions, loggedInUserOptions } from "@/lib/data"
 import clsx from "clsx"
+import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { twMerge } from "tailwind-merge"
-import { allUsersMenuOptions, loggedInUserOptions } from "@/lib/data"
+import { DynamicIcon } from "../custom-ui/DynamicIcons"
 
 function Sidebar() {
 	function getActiveNavItem(link: string) {
 		const path = usePathname()
-		console.log(path, link == path)
 		return link == path
 	}
 	return (

@@ -1,4 +1,4 @@
-import ModelWithButton from "../custom-ui/ModelWithButton"
+import ModelWithButton from "../custom-ui/ModalWithButton"
 import SearchBar from "../custom-ui/SearchBar"
 import ThemeToggle from "../custom-ui/ThemeToggle"
 import UserAvatar from "../custom-ui/UserAvatar"

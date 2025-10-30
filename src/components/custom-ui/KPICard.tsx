@@ -1,7 +1,7 @@
 import GlassCard from "./GlassCard"
 
 type Props = {
-	cardCount: string
+	cardCount: string | number
 	cardTitle: string
 }
 function KPICard({ cardCount, cardTitle }: Props) {

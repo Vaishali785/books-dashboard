@@ -1,3 +1,8 @@
+import GlassCard from "@/components/custom-ui/GlassCard"
+import ThemeBgImage from "@/components/custom-ui/ThemeBgImage"
+import DesktopHeader from "@/components/layout/DesktopHeader"
+import HorizontalNav from "@/components/layout/HorizontalNav"
+import Sidebar from "@/components/layout/Sidebar"
 import type { Metadata } from "next"
 import { Gentium_Book_Plus } from "next/font/google"
 import localFont from "next/font/local"
@@ -34,7 +39,22 @@ export default function RootLayout({
 			<body
 				className={`${gentium.className} ${briemBold.variable} ${briemRegular.variable} antialiased`}
 			>
-				{children}
+				<main className="relative h-screen w-screen p-4">
+					<ThemeBgImage />
+					<div className="flex gap-6 justify-between sm:max-lg:flex-wrap-reverse w-full h-full">
+						<GlassCard classes="lg:w-1/6 h-full">
+							<Sidebar />
+						</GlassCard>
+
+						<div className="right max-lg:w-full lg:flex-1 max-h-screen overflow-hidden">
+							<div className="max-lg:sticky top-0 z-80 max-lg:backdrop-blur-sm p-4 pb-0 max-lg:mb-6 -mx-4 flex  flex-col gap-4 max-lg:bg-light-primary/20">
+								<DesktopHeader />
+								<HorizontalNav />
+							</div>
+							{children}
+						</div>
+					</div>
+				</main>
 			</body>
 		</html>
 	)

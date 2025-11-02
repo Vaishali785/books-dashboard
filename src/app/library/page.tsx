@@ -1,10 +1,11 @@
 "use client"
 import GlassCard from "@/components/custom-ui/GlassCard"
-import StarRating from "@/components/custom-ui/StarRating"
+import StarRating from "@/features/StarRating"
 import { getLocalStorage } from "@/lib/client"
 import { libraryTabs } from "@/lib/constants"
 import { BookData } from "@/lib/types"
 import clsx from "clsx"
+import { Heart } from "lucide-react"
 import { useState } from "react"
 
 function Library() {
@@ -37,13 +38,18 @@ function Library() {
 				</div>
 			</GlassCard>
 
-			<div className="flex gap-4 my-4 flex-wrap overflow-y-scroll h-full pb-40 scrollbar-hidden">
+			<div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 my-4 flex-wrap overflow-y-scroll h-fit pb-40 scrollbar-hidden">
 				{getSelectedData?.map((book, index) => (
-					<GlassCard key={index} classes="w-fit h-fit flex flex-col gap-4 ">
-						<div className="h-[150px] w-[250px] bg-light-primary/40 rounded-md"></div>
-						<div className="flex flex-col gap-2">
-							<div className="capitalize bg-light-primary px-4 py-2 rounded-lg w-fit text-xs">
-								{book.genre}
+					<GlassCard key={index} classes="w-full h-fit flex gap-4 ">
+						<div className="h-[200px] w-[150px] bg-light-primary/40 rounded-md"></div>
+						<div className="flex flex-col gap-2 flex-1">
+							<div className="flex justify-between items-center">
+								<div className="capitalize bg-light-primary/80 px-4 py-2 rounded-lg w-fit text-xs">
+									{book.genre}
+								</div>
+								<button>
+									<Heart className="stroke-red-400 hover:fill-red-500 hover:cursor-pointer hover:stroke-red-500 duration-100 ease-in transition-colors" />
+								</button>
 							</div>
 							<h3 className="text-2xl text-light-primary font-semibold briem-bold-font">
 								{book.name}

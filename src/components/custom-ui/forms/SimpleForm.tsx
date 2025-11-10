@@ -5,7 +5,6 @@ import {
 	DialogTitle,
 } from "@/components/ui/dialog"
 
-import { Button } from "@/components/ui/button"
 import { DialogHeader } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -17,6 +16,7 @@ import {
 	SelectValue,
 } from "@/components/ui/select"
 import DatePicker from "../DatePicker"
+import CustomButton from "../buttons/CustomButton"
 
 function SimpleForm({
 	formRef,
@@ -181,28 +181,12 @@ function SimpleForm({
 
 			<DialogFooter>
 				<DialogClose asChild>
-					<Button
-						variant="outline"
-						className="cursor-pointer hover:bg-red-600 hover:text-white text-red-600 "
-					>
-						Cancel
-					</Button>
+					<CustomButton buttonTitle="Cancel" cancelButton={true} />
 				</DialogClose>
-				{statusVal === "completed" ? (
-					<Button
-						// type="submit"
-						className="cursor-pointer border-white border bg-white text-light-primary hover:bgˀ-light-primary hover:text-white"
-					>
-						Next
-					</Button>
-				) : (
-					<Button
-						type="submit"
-						className="cursor-pointer border-white border bg-white text-light-primary hover:bgˀ-light-primary hover:text-white"
-					>
-						Save Changes
-					</Button>
-				)}
+				<CustomButton
+					buttonTitle={statusVal === "completed" ? "Next" : "Save Changes"}
+					submitButton={statusVal === "completed" ? true : false}
+				/>
 			</DialogFooter>
 		</form>
 	)
